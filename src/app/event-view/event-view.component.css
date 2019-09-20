@@ -1,0 +1,302 @@
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.col-nav {
+  border-bottom: 1px solid grey;
+}
+
+/*navbar */
+
+.navbar img {
+  height: 44px;
+
+}
+
+.span-block {
+  display: block;
+  padding-left: 34px;
+}
+
+.fa-circle {
+  color: rgb(1, 221, 1);
+  margin-left: 9px;
+  font-size: 9px;
+  position: relative;
+  bottom: 10px;
+  right: 8px;
+}
+
+.discount {
+  margin-left: 360px;
+  margin-right: 51px;
+}
+
+.navbar-expand-lg {
+  background: white !important;
+  border-bottom: 1px solid rgb(218, 218, 218) !important;
+}
+
+.navbar {
+  padding-bottom: 0px !important
+}
+
+.mod-list {
+  padding-bottom: 0;
+  padding-top: 20px;
+}
+
+.img-profile {
+  border-radius: 100%;
+  position: relative;
+  bottom: 10px;
+  height: 38px;
+}
+
+.drop-img {
+  height: 30px;
+  background: white;
+  color: grey;
+  border: none;
+  position: relative;
+  top: 16px;
+  right: 6px;
+}
+
+/* col individual-event-content*/
+
+.individual-event-content {
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.individual-event-date{
+    height: 45px;
+    text-align: center;
+    margin: 20px;
+    padding: 7px;
+    border-radius: 10px;
+    background: rgb(241, 241, 241);
+    
+}
+
+.individual-event-info h6{
+    margin-top: 23px;
+    color: rgb(165, 165, 165)
+}
+
+.individual-event-info h2{
+font-family: 'Open Sans', sans-serif;
+}
+
+.individual-event-user-info{
+    display: flex
+}
+
+.img-ind{
+    margin-top: 20px;
+    margin-right: 17px;
+    height: 53px;
+}
+
+.individual-organizer{
+    margin-bottom: 32px;
+}
+
+.individual-organizer p{
+    margin-bottom: 2px;
+    color: rgb(165, 165, 165);
+    font-family: 'Roboto';
+
+}
+
+.organizer-color{
+    color: #00a2c7
+}
+
+.interrogation{
+    background: rgb(165, 165, 165);
+    border-radius: 100%;
+    color: white;
+    padding: 2px;
+    font-size: 14px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+
+.individual-event-assistants{
+    margin: auto;
+}
+
+.individual-event-assistants h5{
+    color: black;
+    font-family: 'Lato';
+    font-size: 16px;
+    margin-top: 40px;
+    padding-left: 15px;
+}
+
+.asistents{
+    color: rgb(121, 121, 121);
+    font-family: 'Lato';
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+
+.individual-event-btn-group button{
+    margin: 0 10px;
+}
+
+.check{
+width: 146px;
+border-radius: 6px;
+border: none;
+color: rgb(233, 233, 233);
+background: #0098ab;
+height: 34px;
+}
+
+.fav{
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    height: 34px;
+    width: 36px;
+    color: rgb(104, 104, 104)
+}
+
+
+.social{
+    border-top: 1px solid rgb(173, 173, 173);
+    margin-top: 33px;
+    display: flex;
+    border-bottom: 1px solid grey;
+    padding-bottom: 22px;
+}
+
+.social p{
+    position: relative;
+    top: 10px;
+    font-family: 'Roboto';
+    left: 10px;
+    color: rgb(70, 70, 70);
+}
+
+.social i{
+    font-size: 23px;
+    margin: 0 8px;
+    color: grey;
+    position: relative;
+    top: 10px;
+}
+
+.fa-facebook-official{
+    margin-left: 20px !important
+}
+
+.confirm-assist-not-logged{
+  margin-top: 20px;
+}
+
+
+/* row body*/
+
+.row-individual-body{
+  background: rgb(243, 243, 243);
+}
+
+.individual-event-img img{
+  height: 330px;
+  margin-top: 50px;
+  margin-left: 64px;
+}
+
+.individual-event-body h5{
+  margin-left: 64px;
+  margin-left: 64px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-family: 'Lato';
+  font-weight: bold;
+
+}
+
+.individual-event-body p{
+  margin-left: 64px;
+  padding-right: 278px;
+  line-height: 2.0;
+  text-align: center;
+}
+
+
+/* col body-two */
+.edit-event button{
+  border: 2px solid white;
+  color: white;
+  position: absolute;
+  bottom: 19px;
+  right: 72px;
+  width: 122px;
+  height: 40px;
+  border-radius: 8px;
+  background: orange;
+  font-family: 'Roboto';
+  text-transform: capitalize;
+
+}
+
+.delete-button{
+  border: 2px solid white;
+  color: white;
+  position: absolute;
+  bottom: 80px;
+  right: 72px;
+  width: 122px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgb(253, 78, 78);
+  font-family: 'Roboto';
+  text-transform: capitalize;
+
+}
+
+/* row event-assistants */
+
+.col-event-assistants{
+  background: rgb(243, 243, 243);
+  padding-bottom: 20px;
+  border-top: 1px solid grey;
+  border-radius: 20px;
+}
+
+.event-assistants-title{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  padding-bottom: 30px;
+}
+
+.event-assistants-title a{
+  padding-right: 30px;
+}
+
+.event-assistants-box{
+  width: 156px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 7px;
+  padding: 13px;
+  text-align: center;
+  margin-left: 30px;
+}
+
+@media (max-width: 1100px) {
+  .discount {
+    display: none !important
+  }
+
+}

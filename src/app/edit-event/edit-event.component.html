@@ -1,0 +1,75 @@
+<div class="container-fluid">
+        <div class="row row-form-add">
+          <div class="col col-sm-12 col-md-12 col-lg-12">
+            <div class="form-box mx-auto">
+                <h1>Edita Tu Evento </h1>
+              <form>
+                <div class="form-group">
+                  <label for="groupName"> Group Name </label>
+                  <input type="text" [(ngModel)]="form.eventGroup" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="groupName" required>
+                </div>
+                <div class="form-group">
+                  <label for="eventName">Event Name</label>
+                  <input type="text" [(ngModel)]="form.eventName" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="eventName" required>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput3">City Of The Event</label>
+                  <input type="text" [(ngModel)]="form.eventPlace" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="formGroupExampleInput3" required>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput4">Place Of The Event</label>
+                  <input type="text" [(ngModel)]="form.eventTakePlaceAt" [ngModelOptions]="{standalone: true}"
+                    class="form-control" id="formGroupExampleInput4" required>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput5">Event Adress</label>
+                  <input type="text" [(ngModel)]="form.eventAdress" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="formGroupExampleInput5" required>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput6">¿Who is the Organizer of the event?</label>
+                  <input type="text" [(ngModel)]="form.eventOrganizer" [ngModelOptions]="{standalone: true}"
+                    class="form-control" id="formGroupExampleInput6" required>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput7">Event Img</label>
+                  <input type="text" [(ngModel)]="form.eventImg" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="formGroupExampleInput7" required>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="eventDate">Event Date</label>
+                    <input [(ngModel)]="form.eventDate" [ngModelOptions]="{standalone: true}" type="date" class="form-control" id="eventDate">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="eventFromHour">Events Starts At</label>
+                    <input [(ngModel)]="form.eventFromHour" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="eventFromHour">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="eventToHour">Events Ends At</label>
+                    <input [(ngModel)]="form.eventToHour" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="eventToHour">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Event Decription</label>
+                  <textarea [(ngModel)]="form.eventDescription" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button (click)="editEvent()">Editar evento</button> <a routerLinkActive="active" [routerLink]="['/home']"><button>Back To Home</button></a>
+                <div *ngIf="this._mainService.createEventMsg">
+                    {{this._mainService.editEventMsg}}
+                </div>
+      
+              </form>
+            </div>
+          </div>
+      
+        </div>
+        <!--end box-->
+      
+      </div>
+      <!--end contaner-fluid-->
+      

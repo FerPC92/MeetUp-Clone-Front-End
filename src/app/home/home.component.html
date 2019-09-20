@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <!--NGIF ISLOGGED IS FALSE-->
+  <div class="row row-head" *ngIf="!this._mainService.isLogged">
+    <div class="col col-sm-12 col-md-12 col-12 col-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../../assets/meetlogo.svg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Crear un nuevo Grupo</a>
+            </li>
+            <li class="nav-item">
+              <a routerLinkActive="active" class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+              <a routerLinkActive="active" class="nav-link" [routerLink]="['/login']">Registrarse
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+  <!--NG IF ISLOGGED IS TRUE-->
+  <div class="row row-head" *ngIf="this._mainService.isLogged">
+    <div class="col col-sm-12 col-md-12 col-12 col-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../../assets/meetlogo.svg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link discount" href="#">Crear un nuevo grupo<span class="span-block"> 30 %MENOS</span> <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link mod-list" href="#">Explorar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#">Mensajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#">Notificaciones<i class="fa fa-circle" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#"><img class="img-profile" src="https://secure.meetupstatic.com/img/noPhoto_50.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle drop-img" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+  <div class="row row-header">
+    <div class="col col-sm-12 col-md-12 col-12 col-head">
+      <header>
+        <div class="head-text">
+          <h3 class="title-head">Encuentra tu próximo evento</h3>
+          <h5>42 eventos en tus grupos <span>.</span> 1.456 eventos cerca de ti</h5>
+        </div>
+      </header>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col col-sm-12 col-md-12 col-lg-12">
+      <div class="searcher-bar mx-auto">
+        <div class="search-cont">
+          <input class="search-input" type="text" placeholder="Buscar">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <h6 class="distance">A menos de 5km de Barcelona, ES</h6>
+          <div class="buttons-groups-search">
+            <button class="btn-one">Grupos</button>
+            <button class="btn-two">Calendario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-body">
+    <div class="col col-sm-9 col-md-9 col-9 col-events-one">
+      <div class="event-box" *ngFor=" let element of this._mainService.allEvents">
+        <div class="event-starts">
+          <h5>{{element.eventToHour}}:00</h5>
+        </div>
+        <div class="event-info">
+          <h6 class="event-group">{{element.eventGroup}}</h6>
+          <a routerLinkActive="active" [routerLink]="['/event', element._id]">
+            <h5 class="event-name">{{element.eventName}}</h5>
+          </a>
+          <h6 class="event-place">{{element.eventTakePlaceAt}}</h6>
+          <h6 class="event-members">{{element.eventMembers.length}} Miembros asistiran al evento</h6>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col col-sm-3 col-md-3 col-3 col-events-two">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td colspan="3">Todos los eventos previstos</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td colspan="3">Eventos guardados</td>
+          </tr>
+          <tr>
+            <th scope="row" class="row-blue"></th>
+            <td colspan="3" class="table-blue">Tus grupos y recomendaciones</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td colspan="3">Solo tus grupos</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td colspan="3">Solo tus eventos</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <a routerLinkActive="active" [routerLink]="['/event/new']"><button class="add-event">Crear Evento</button> </a>
+
+</div>
+<!--end container-->
+<app-footer></app-footer>

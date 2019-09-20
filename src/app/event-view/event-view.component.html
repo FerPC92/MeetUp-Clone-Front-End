@@ -1,0 +1,200 @@
+<div class="container-fluid" *ngFor=" let element of this._mainService.individualEvent">
+  <!--NGIF ISLOGGED IS FALSE-->
+  <div class="row row-head" *ngIf="!this._mainService.isLogged">
+    <div class="col col-sm-12 col-md-12 col-12 col-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../../assets/meetlogo.svg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Crear un nuevo Grupo</a>
+            </li>
+            <li class="nav-item">
+              <a routerLinkActive="active" class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+              <a routerLinkActive="active" class="nav-link" [routerLink]="['/login']">Registrarse
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+  <!--NG IF ISLOGGED IS TRUE-->
+  <div class="row row-head" *ngIf="this._mainService.isLogged">
+    <div class="col col-sm-12 col-md-12 col-12 col-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="../../assets/meetlogo.svg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link discount" href="#">Crear un nuevo grupo<span class="span-block"> 30 %MENOS</span> <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link mod-list" href="#">Explorar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#">Mensajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#">Notificaciones<i class="fa fa-circle" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mod-list" href="#"><img class="img-profile"
+                  src="https://secure.meetupstatic.com/img/noPhoto_50.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle drop-img" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+  <div class="row row-info-event">
+    <div class="col col-sm-12 col-md-12 col-12 col-info-event ">
+      <div class="individual-event-content">
+        <div class="individual-event-date">
+          {{element.eventDate |slice:5:10}}
+        </div>
+        <div class="individual-event-info">
+          <h6>{{element.eventDate|slice:0:9}}</h6>
+          <h2>{{element.eventName}}</h2>
+          <div class="individual-event-user-info">
+              <img class="img-profile img-ind"
+              src="https://secure.meetupstatic.com/img/noPhoto_50.png" alt="">
+              <div class="individual-organizer">
+            <p>Organizado por <span class="organizer-color">{{element.eventOrganizer}}</span></p>
+            <p>De <span class="organizer-color">{{element.eventGroup}}</span></p>
+            <p>Grupo Publico <span class="interrogation">?</span></p>
+          </div>
+          </div>
+        </div>
+        
+        <div class="individual-event-assistants" >
+          <h5>¿Asistirás? <span class="asistents">{{element.eventMembers.length}} Personas Asistirán</span></h5>
+          <div class="confirm-assist-not-logged" *ngIf="!this._mainService.isLogged">
+            <h6>Para confirmar tu asistencia debes estar logueado</h6>
+
+          </div>
+          <div class="individual-event-btn-group" *ngIf="this._mainService.isLogged">
+            <button class="check" (click)="this._mainService.addUserToEvent(userID,element._id)"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <button class="check" (click)="this._mainService.deleteUserFromEvent(userID,element._id)"><i
+                class="fa fa-times" aria-hidden="true"></i></button>
+            <button class="fav"><i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="social">
+            <p>Compartir : </p>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+
+          </div>
+          
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="row row-individual-body">
+    <div class="col col-sm-9 col-md-9 col-9 col-individual-event-left">
+      <div class="individual-event-img">
+        <img [src]="element.eventImg" alt="event-img" >
+      </div>
+      <div class="individual-event-body">
+        <h5>Detalles:</h5>
+        <p>{{element.eventDescription}}</p>
+
+      </div>
+
+    </div>
+    <div class="col col-sm-3 col-md-3 col-3 col-individual-event-right">
+        <div class="edit-event" *ngIf="this._mainService.isLogged">
+            <a routerLinkActive=""  [routerLink]="['/edit', element._id]"><button >Edit Event</button> </a>
+        </div>
+        <button class="delete-button" data-toggle="modal" data-target="#exampleModal">Delete Event</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete Event</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete this event?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button  (click)="this._mainService.deleteEvent(element._id)" type="button" class="btn btn-primary">Delete Event</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+    </div>
+
+  </div>
+
+  <div class="row row-event-assistants">
+    <div class="col col-sm-12 col-md-12 col-12 col-event-assistants">
+      <div class="event-assistants-title">
+        <h4>Asistentes ({{element.eventMembers.length}})</h4>
+        <a href="#">Ver Todo</a>
+      </div>
+        <div class="event-assistants-box" *ngFor="let item of element.eventMembers">
+            <img class="img-profile"
+            src="https://secure.meetupstatic.com/img/noPhoto_50.png" alt="">
+            <p>{{item["name"]}}</p>
+            <p>Miembro</p>
+            <p>1 Grupo en comun</p>
+
+        </div>
+    </div>
+  </div>
+
+
+</div>
+<app-footer></app-footer>
+<!--end container-->
